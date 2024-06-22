@@ -5,7 +5,9 @@
 
 ## Create DataDir Directory
 
+```bash
 mkdir -p /var/lib/scylla
+```
 
 ## Agregar Nodo 1
 
