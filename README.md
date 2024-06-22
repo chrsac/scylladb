@@ -1,3 +1,39 @@
 # Deploy scylladb Docker with 3 nodes
-ScyllaDB Docker 
+### ScyllaDB Docker 
+
 ![diagram_Docker](https://github.com/chrsac/scylladb/assets/8300074/8e3bbfd1-a1e2-4f60-96c9-364e708eda35)
+
+## Create DataDir Directory
+
+mkdir -p /var/lib/scylla
+
+## Agregar Nodo 1
+
+
+docker run -d --name scylla-node1  \
+  -p 7000:7000 -p 7001:7001 -p 7199:7199 -p 9042:9042 -p 9160:9160 \
+  --mount type=bind,source=/var/lib/scylla,destination=/var/lib/scylla \
+  sb3:5000/scylla:latest \
+  --smp 2 --memory 2G --overprovisioned 1 \
+  --broadcast-rpc-address 192.168.1.1  --broadcast-address 192.168.1.1 \
+  --seeds 192.168.1.1
+
+## run: 
+   docker exec -it scylla-node1  bash
+
+   nodetool status
+
+  Datacenter: datacenter1
+=======================
+Status=Up/Down
+|/ State=Normal/Leaving/Joining/Moving
+--  Address         Load       Tokens       Owns    Host ID                               Rack
+UN  x.x.x.x         193.15 KB  256          ?       dbfdfde7-f072-427a-9452-cb07d121a0e5  rack1
+
+
+
+
+
+  
+
+
