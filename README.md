@@ -15,7 +15,7 @@ mkdir -p /var/lib/scylla
 docker run -d --name scylla-node1  \
   -p 7000:7000 -p 7001:7001 -p 7199:7199 -p 9042:9042 -p 9160:9160 \
   --mount type=bind,source=/var/lib/scylla,destination=/var/lib/scylla \
-  sb3:5000/scylla:latest \
+  scylladb/scylla:latest \
   --smp 2 --memory 2G --overprovisioned 1 \
   --broadcast-rpc-address 192.168.1.1  --broadcast-address 192.168.1.1 \
   --seeds 192.168.1.1
@@ -50,7 +50,7 @@ Change --broadcast-rpc-address and --broadcast-address with VM IP Address.
 docker run -d --name scylla-node1  \
   -p 7000:7000 -p 7001:7001 -p 7199:7199 -p 9042:9042 -p 9160:9160 \
   --mount type=bind,source=/var/lib/scylla,destination=/var/lib/scylla \
-  sb3:5000/scylla:latest \
+  scylladb/scylla:latest \
   --smp 2 --memory 2G --overprovisioned 1 \
   --broadcast-rpc-address 192.168.1.2  --broadcast-address 192.168.1.2 \
   --seeds 192.168.1.1
