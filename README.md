@@ -27,7 +27,7 @@ docker run -d --name scylla-node1  \
 ```
 
 ```bash
-   nodetool status
+   root@585a590e56e8:/# nodetool status
 ```
 
 ```console
