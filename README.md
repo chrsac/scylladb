@@ -25,7 +25,10 @@ docker run -d --name scylla-node1  \
 ```bash
    docker exec -it scylla-node1  bash
 ```
+
+```bash
    nodetool status
+```
 
 ```console
   Datacenter: datacenter1
