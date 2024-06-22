@@ -9,7 +9,7 @@ mkdir -p /var/lib/scylla
 
 ## Agregar Nodo 1
 
-
+```console
 docker run -d --name scylla-node1  \
   -p 7000:7000 -p 7001:7001 -p 7199:7199 -p 9042:9042 -p 9160:9160 \
   --mount type=bind,source=/var/lib/scylla,destination=/var/lib/scylla \
@@ -18,9 +18,13 @@ docker run -d --name scylla-node1  \
   --broadcast-rpc-address 192.168.1.1  --broadcast-address 192.168.1.1 \
   --seeds 192.168.1.1
 
-## run: 
-   docker exec -it scylla-node1  bash
+```
 
+## run: 
+
+```bash
+   docker exec -it scylla-node1  bash
+```
    nodetool status
 
 ```console
