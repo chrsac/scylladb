@@ -23,12 +23,16 @@ docker run -d --name scylla-node1  \
 
    nodetool status
 
+```console
   Datacenter: datacenter1
 =======================
 Status=Up/Down
 |/ State=Normal/Leaving/Joining/Moving
 --  Address         Load       Tokens       Owns    Host ID                               Rack
 UN  x.x.x.x         193.15 KB  256          ?       dbfdfde7-f072-427a-9452-cb07d121a0e5  rack1
+
+```
+
 
 
 
